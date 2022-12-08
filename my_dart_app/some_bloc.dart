@@ -1,1 +1,1 @@
-class TestBloc {}
+class Some {}
