@@ -2,7 +2,7 @@
 
 [![Powered by Mason](https://img.shields.io/endpoint?url=https%3A%2F%2Ftinyurl.com%2Fmason-badge)](https://github.com/felangel/mason)
 
-This project contains uses a brick template to generate custom lints with mason.
+This project uses a brick template to generate custom lints with mason.
 
 Generated code is built on top of [custom_lint](https://pub.dev/packages/custom_lint#creating-a-custom-lint-package).
 
