@@ -12,7 +12,7 @@ Take a look on how to [initialize mason](https://github.com/felangel/mason) and 
 
 CLI will ask you what kind of file name and corresponding classes you want to match. 
 
-E.g. if you have a file called `authentication_service.dart` and you want to have inside it a class called `AuthenticationService` and not just only `Authentication` you can write `service` when CLI will ask you.
+E.g. if you have a file called `authentication_service.dart` and you want to have inside it a class called `AuthenticationService` and not only `Authentication` you can write `service` when CLI will ask you.
 
 The same with `bloc`, `model` and so on.
 
