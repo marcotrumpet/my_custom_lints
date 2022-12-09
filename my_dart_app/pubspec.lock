@@ -190,6 +190,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0"
+  mason_custom_lints:
+    dependency: "direct dev"
+    description:
+      path: "../mason_custom_lints"
+      relative: true
+    source: path
+    version: "1.0.0"
   matcher:
     dependency: transitive
     description:
@@ -211,13 +218,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.3"
-  my_custom_lints:
-    dependency: "direct dev"
-    description:
-      path: "../my_custom_lints"
-      relative: true
-    source: path
-    version: "1.0.0"
   node_preamble:
     dependency: transitive
     description:

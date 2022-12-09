@@ -4,13 +4,13 @@ import 'package:analyzer/dart/analysis/results.dart';
 import 'package:analyzer/dart/element/element.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
 
-import '../src/class_name_checker.dart';
+import '../src/name_checker.dart';
 
 void main(List<String> args, SendPort sendPort) {
-  startPlugin(sendPort, _MyCustomLints());
+  startPlugin(sendPort, _MasonCustomLints());
 }
 
-class _MyCustomLints extends PluginBase {
+class _MasonCustomLints extends PluginBase {
   @override
   Stream<Lint> getLints(ResolvedUnitResult unit) async* {
     final library = unit.libraryElement;
@@ -18,7 +18,9 @@ class _MyCustomLints extends PluginBase {
     final classes = library.topLevelElements.whereType<ClassElement>().toList();
 
     for (final classInstance in classes) {
-      yield* classNameShouldMatchFileName(unit, classInstance);
+      {{#arrayValues}}
+      yield* shouldMatchFileName(unit: unit, classInstance: classInstance, valueName: '{{valueName}}',);
+      {{/arrayValues}}
     }
   }
 }

@@ -164,6 +164,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "mason_custom_lints",
+      "rootUri": "../../mason_custom_lints",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "matcher",
       "rootUri": "file:///Users/marcogaletta/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.13",
       "packageUri": "lib/",
@@ -180,12 +186,6 @@
       "rootUri": "file:///Users/marcogaletta/.pub-cache/hosted/pub.dartlang.org/mime-1.0.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
-    },
-    {
-      "name": "my_custom_lints",
-      "rootUri": "../../my_custom_lints",
-      "packageUri": "lib/",
-      "languageVersion": "2.18"
     },
     {
       "name": "node_preamble",
@@ -380,7 +380,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2022-12-08T12:30:26.022943Z",
+  "generated": "2022-12-09T14:30:29.281285Z",
   "generator": "pub",
   "generatorVersion": "2.18.0"
 }

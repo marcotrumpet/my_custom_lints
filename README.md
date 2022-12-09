@@ -1,31 +1,21 @@
-# my_custom_lint
+# mason_custom_lint
 
-Testing project from [this video](https://www.youtube.com/watch?v=Okg1Os-gtbo) from [Invertase](https://invertase.io).
+[![Powered by Mason](https://img.shields.io/endpoint?url=https%3A%2F%2Ftinyurl.com%2Fmason-badge)](https://github.com/felangel/mason)
 
-The only difference is that instead of checking `_service` only, it try to match every class name with the corresponding file name.
+This project contains uses a brick template to generate custom lints with mason.
 
-e.g.
+Generated code is built on top of [custom_lint](https://pub.dev/packages/custom_lint#creating-a-custom-lint-package).
 
-[some_bloc](my_dart_app/some_bloc.dart) file should gives you a warning `If the file name ends with _bloc the className must end with Bloc
-Replace Some with SomeBloc`<br>
-and<br>
-[some_service](my_dart_app/some_service.dart) file should gives you a warning `If the file name ends with _service the className must end with Service
-Replace Some with SomeService`<br>
+## Generate
 
+Take a look on how to [initialize mason](https://github.com/felangel/mason) and than you can do `mason make custom_lint_brick` into terminal.
 
-To use it just add to you pubspec.yaml file
+CLI will ask you what kind of file name and corresponding classes you want to match. 
 
-```yaml
-dev_dependencies:
-  custom_lint: ^0.0.15
-  my_custom_lints:
-    path: ../my_custom_lints
-```
+E.g. if you have a file called `authentication_service.dart` and you want to have inside it a class called `AuthenticationService` and not just only `Authentication` you can write `service` when CLI will ask you.
 
-and in your analysis_options.yaml file
+The same with `bloc`, `model` and so on.
 
-```yaml
-analyzer:
-  plugins:
-    - custom_lint
-```
+## Usage
+
+Mason will generate a flutter package based on `custom_lint` package so the only thing you need to do in order to use it in your project is to add it to pubpsec and change the analysis_options file.

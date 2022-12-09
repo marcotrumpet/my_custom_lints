@@ -7,29 +7,36 @@ import 'package:custom_lint_builder/custom_lint_builder.dart';
 
 import 'extensions.dart';
 
-Stream<Lint> classNameShouldMatchFileName(
-    ResolvedUnitResult unit, ClassElement classInstance) async* {
+Stream<Lint> shouldMatchFileName({
+  required ResolvedUnitResult unit,
+  required ClassElement classInstance,
+  required String valueName,
+}) async* {
   final library = unit.libraryElement;
   final filePath = library.source.fullName;
   final fileName = library.source.shortName;
-  final topicName = fileName.replaceAll('.dart', '').split('_').last;
+  // final topicName = fileName.replaceAll('.dart', '').split('_').last;
 
-  final name = classInstance.name;
+  final className = classInstance.name;
   final location = classInstance.nameLintLocation;
-  final newClassName = '$name${topicName.capitalize()}';
+  final newClassName = '$className${valueName.capitalize()}';
 
-  if (!name.endsWith(topicName.capitalize())) {
+  bool fileNameEndsWithValueName() =>
+      fileName.replaceAll('.dart', '').split('_').last == valueName;
+
+  if (fileNameEndsWithValueName() &&
+      !className.endsWith(valueName.capitalize())) {
     yield Lint(
       code: 'class_name_should_match_file_name',
       message:
-          'If the file name ends with _$topicName the className must end with ${topicName.capitalize()}',
+          'If the file name ends with _$valueName the className must end with ${valueName.capitalize()}',
       location: unit.lintLocationFromLines(
         startLine: location?.startLine ?? 1,
         endLine: location?.endLine ?? 1,
         startColumn: location?.startColumn ?? 1,
         endColumn: location?.endColumn ?? 1,
       ),
-      correction: 'Replace $name with $newClassName',
+      correction: 'Replace $className with $newClassName',
       severity: LintSeverity.warning,
       getAnalysisErrorFixes: (Lint lint) async* {
         final changeBuilder = ChangeBuilder(session: unit.session);
