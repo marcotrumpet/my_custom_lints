@@ -8,7 +8,7 @@ Generated code is built on top of [custom_lint](https://pub.dev/packages/custom_
 
 ## Generate
 
-Take a look on how to [initialize mason](https://github.com/felangel/mason) and than you can do `mason make custom_lint_brick` into terminal.
+Take a look at how to [initialize [mason](https://github.com/felangel/mason) and then you can do `mason make custom_lint_brick` into a terminal.
 
 CLI will ask you what kind of file name and corresponding classes you want to match. 
 
@@ -18,4 +18,4 @@ The same with `bloc`, `model` and so on.
 
 ## Usage
 
-Mason will generate a flutter package based on `custom_lint` package so the only thing you need to do in order to use it in your project is to add it to pubpsec and change the analysis_options file.
+Mason will generate a flutter package based on `custom_lint` package so the only thing you need to do to use it in your project is to add it to pubpsec and change the analysis_options file.
