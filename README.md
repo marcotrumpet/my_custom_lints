@@ -8,7 +8,7 @@ Generated code is built on top of [custom_lint](https://pub.dev/packages/custom_
 
 ## Generate
 
-Take a look at how to [initialize [mason](https://github.com/felangel/mason) and then you can do `mason make custom_lint_brick` into a terminal.
+Take a look at how to initialize [mason](https://github.com/felangel/mason) and then you can do `mason make custom_lint_brick` into a terminal.
 
 CLI will ask you what kind of file name and corresponding classes you want to match. 
 
