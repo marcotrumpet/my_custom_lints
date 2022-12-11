@@ -4,7 +4,7 @@
 
 This project uses a brick template to generate custom lints with mason.
 
-![bloc_demo](../assets/bloc_demo.gif)
+![bloc_demo](https://raw.githubusercontent.com/marcotrumpet/my_custom_lints/master/assets/bloc_demo.gif)
 
 Generated code is built on top of [custom_lint][5].
 
