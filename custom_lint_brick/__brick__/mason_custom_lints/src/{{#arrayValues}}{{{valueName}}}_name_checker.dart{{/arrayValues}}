@@ -17,17 +17,20 @@ Stream<Lint> {{arrayValues.valueName}}ShouldMatchFileName({
 
     final className = classInstance.name;
     final location = classInstance.nameLintLocation;
-    final newClassName = '$className${{{arrayValues.valueName}}.capitalize()}';
 
     bool fileNameEndsWithValueName() =>
-    fileName.replaceAll('.dart', '').split('_').last == {{arrayValues.valueName}};
+    fileName.replaceAll('.dart', '').split('_').last == '{{arrayValues.valueName}}';
+
+    String valueNameCapitalized() => '{{arrayValues.valueName}}'.capitalize();
+    
+    final newClassName = '$className${valueNameCapitalized()}';
 
 if (fileNameEndsWithValueName() &&
-    !className.endsWith({{arrayValues.valueName}}.capitalize())) {
+    !className.endsWith(valueNameCapitalized())) {
     yield Lint(
         code: 'class_name_should_match_file_name',
         message:
-        'If the file name ends with _${{arrayValues.valueName}} the className must end with ${{{arrayValues.valueName}}.capitalize()}',
+        'If the file name ends with _{{arrayValues.valueName}} the className must end with ${valueNameCapitalized()}',
         location: unit.lintLocationFromLines(
             startLine: location?.startLine ?? 1,
             endLine: location?.endLine ?? 1,
