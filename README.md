@@ -4,6 +4,8 @@
 
 This project uses a brick template to generate custom lints with mason.
 
+**Check this brick out on [brickHub](https://brickhub.dev/bricks/custom_lint_brick/0.1.0+1)**
+
 ![bloc_demo](./assets/bloc_demo.gif)
 
 Generated code is built on top of [custom_lint](https://pub.dev/packages/custom_lint#creating-a-custom-lint-package).
