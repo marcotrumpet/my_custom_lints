@@ -5,31 +5,32 @@ import 'package:analyzer_plugin/protocol/protocol_generated.dart';
 import 'package:analyzer_plugin/utilities/change_builder/change_builder_core.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
 
-import 'extensions.dart';
+import '../extensions.dart';
 
-Stream<Lint> shouldMatchFileName({
+Stream<Lint> blocShouldMatchFileName({
   required ResolvedUnitResult unit,
   required ClassElement classInstance,
-  required String valueName,
 }) async* {
   final library = unit.libraryElement;
   final filePath = library.source.fullName;
   final fileName = library.source.shortName;
-  // final topicName = fileName.replaceAll('.dart', '').split('_').last;
 
   final className = classInstance.name;
   final location = classInstance.nameLintLocation;
-  final newClassName = '$className${valueName.capitalize()}';
 
   bool fileNameEndsWithValueName() =>
-      fileName.replaceAll('.dart', '').split('_').last == valueName;
+      fileName.replaceAll('.dart', '').split('_').last == 'bloc';
+
+  String valueNameCapitalized() => 'bloc'.capitalize();
+
+  final newClassName = '$className${valueNameCapitalized()}';
 
   if (fileNameEndsWithValueName() &&
-      !className.endsWith(valueName.capitalize())) {
+      !className.endsWith(valueNameCapitalized())) {
     yield Lint(
       code: 'class_name_should_match_file_name',
       message:
-          'If the file name ends with _$valueName the className must end with ${valueName.capitalize()}',
+          'If the file name ends with _bloc the className must end with ${valueNameCapitalized()}',
       location: unit.lintLocationFromLines(
         startLine: location?.startLine ?? 1,
         endLine: location?.endLine ?? 1,

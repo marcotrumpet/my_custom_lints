@@ -4,9 +4,9 @@ import 'package:analyzer/dart/analysis/results.dart';
 import 'package:analyzer/dart/element/element.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
 
-{{#arrayValues}}
-import '../src/name_checkers/{{valueName}}_name_checker.dart';
-{{/arrayValues}}
+import '../src/name_checkers/service_name_checker.dart';
+
+import '../src/name_checkers/bloc_name_checker.dart';
 
 void main(List<String> args, SendPort sendPort) {
   startPlugin(sendPort, _MasonCustomLints());
@@ -20,9 +20,15 @@ class _MasonCustomLints extends PluginBase {
     final classes = library.topLevelElements.whereType<ClassElement>().toList();
 
     for (final classInstance in classes) {
-      {{#arrayValues}}
-      yield* {{valueName}}ShouldMatchFileName(unit: unit, classInstance: classInstance,);
-      {{/arrayValues}}
+      yield* serviceShouldMatchFileName(
+        unit: unit,
+        classInstance: classInstance,
+      );
+
+      yield* blocShouldMatchFileName(
+        unit: unit,
+        classInstance: classInstance,
+      );
     }
   }
 }
