@@ -8,7 +8,7 @@ This project uses a brick template to generate custom lints with mason.
 
 Generated code is built on top of [custom_lint](https://pub.dev/packages/custom_lint#creating-a-custom-lint-package).
 
-## Generate
+## Generate 💻
 
 Take a look at how to initialize [mason](https://github.com/felangel/mason) and then you can do `mason make custom_lint_brick` into a terminal.
 
@@ -20,6 +20,6 @@ The same with `bloc`, `model` and so on.
 
 *mason_custom_lints folder contains a generated package that checks for `_service` and `_bloc` files.*
 
-## Usage
+## Usage 🔨
 
 Mason will generate a flutter package based on `custom_lint` package so the only thing you need to do to use it in your project is to add it to pubpsec and change the analysis_options file.
