@@ -5,7 +5,7 @@ import 'package:analyzer/dart/element/element.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
 
 {{#arrayValues}}
-import '../src/{{valueName}}_name_checker.dart';
+import '../src/name_checkers/{{valueName}}_name_checker.dart';
 {{/arrayValues}}
 
 void main(List<String> args, SendPort sendPort) {

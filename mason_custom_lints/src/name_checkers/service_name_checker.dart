@@ -5,7 +5,7 @@ import 'package:analyzer_plugin/protocol/protocol_generated.dart';
 import 'package:analyzer_plugin/utilities/change_builder/change_builder_core.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
 
-import 'extensions.dart';
+import '../extensions.dart';
 
 Stream<Lint> serviceShouldMatchFileName({
   required ResolvedUnitResult unit,
