@@ -4,6 +4,8 @@
 
 This project uses a brick template to generate custom lints with mason.
 
+![bloc_demo](./assets/bloc_demo.gif)
+
 Generated code is built on top of [custom_lint](https://pub.dev/packages/custom_lint#creating-a-custom-lint-package).
 
 ## Generate
@@ -15,6 +17,8 @@ CLI will ask you what kind of file name and corresponding classes you want to ma
 E.g. if you have a file called `authentication_service.dart` and you want to have inside it a class called `AuthenticationService` and not only `Authentication` you can write `service` when CLI will ask you.
 
 The same with `bloc`, `model` and so on.
+
+*mason_custom_lints folder contains a generated package that checks for `_service` and `_bloc` files.*
 
 ## Usage
 

@@ -20,3 +20,4 @@ doc/api/
 *.js.deps
 *.js.map
 my_dart_app/custom_lint.log
+.vscode/settings.json
