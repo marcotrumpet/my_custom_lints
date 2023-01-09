@@ -25,3 +25,17 @@ The same with `bloc`, `model` and so on.
 ## Usage 🔨
 
 Mason will generate a flutter package based on `custom_lint` package so the only thing you need to do to use it in your project is to add it to pubpsec and change the analysis_options file.
+
+In your App add this to your pubspec.yaml:
+```yaml
+dev_dependencies:
+  custom_lint: ^0.0.15
+  mason_custom_lints:
+    path: ../mason_custom_lints
+```
+And in your analysis_options.yaml add:
+```yaml
+analyzer:
+  plugins:
+    - custom_lint
+```
