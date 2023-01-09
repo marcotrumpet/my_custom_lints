@@ -2,7 +2,7 @@ name: custom_lint_brick
 description: custom_lint_brick lets you customize lint rules.
 repository: https://github.com/marcotrumpet/my_custom_lints
 
-version: 0.1.0+2
+version: 0.1.0+3
 
 environment:
   mason: ">=0.1.0-dev.39 <0.1.0"
