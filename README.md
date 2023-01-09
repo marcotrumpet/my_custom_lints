@@ -29,7 +29,7 @@ Mason will generate a flutter package based on `custom_lint` package so the only
 In your App add this to your pubspec.yaml:
 ```yaml
 dev_dependencies:
-  custom_lint: ^0.0.15
+  custom_lint: 0.1.0
   mason_custom_lints:
     path: ../mason_custom_lints
 ```

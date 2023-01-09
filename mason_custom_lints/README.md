@@ -1,6 +1,6 @@
 # my_custom_lint
 
-This package will check the class name of files ending with the following values `bloc`,.
+This package will check the class name of files ending with the following values `blocx`,`bloc`,.
 
 Testing project from [this video](https://www.youtube.com/watch?v=Okg1Os-gtbo) from [Invertase](https://invertase.io).
 
@@ -19,7 +19,7 @@ To use it just add it to your pubspec.yaml file
 
 ```yaml
 dev_dependencies:
-  custom_lint: ^0.0.15
+  custom_lint: 0.1.0
   my_custom_lints:
     path: ../my_custom_lints
 ```
