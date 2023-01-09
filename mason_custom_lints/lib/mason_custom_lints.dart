@@ -2,8 +2,6 @@ import 'package:analyzer/dart/analysis/results.dart';
 import 'package:analyzer/dart/element/element.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
 
-import 'package:mason_custom_lints/src/name_checkers/blocx_name_checker.dart';
-
 import 'package:mason_custom_lints/src/name_checkers/bloc_name_checker.dart';
 
 PluginBase createPlugin() => _MasonCustomLints();
@@ -16,13 +14,8 @@ class _MasonCustomLints extends PluginBase {
     final classes = library.topLevelElements.whereType<ClassElement>().toList();
 
     for (final classInstance in classes) {
-      yield* blocxShouldMatchFileName(
-        unit: unit,
-        classInstance: classInstance,
-      );
-
       yield* blocShouldMatchFileName(
-        unit: unit,
+        unit: resolvedUnitResult,
         classInstance: classInstance,
       );
     }

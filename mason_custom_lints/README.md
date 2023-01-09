@@ -1,6 +1,6 @@
 # my_custom_lint
 
-This package will check the class name of files ending with the following values `blocx`,`bloc`,.
+This package will check the class name of files ending with the following values `bloc`,.
 
 Testing project from [this video](https://www.youtube.com/watch?v=Okg1Os-gtbo) from [Invertase](https://invertase.io).
 
